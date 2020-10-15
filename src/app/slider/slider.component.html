@@ -1,0 +1,18 @@
+<div class="slider">
+    <div class="text-left">
+         <h2>Related Products</h2>
+   </div>
+  <ngx-slick-carousel class="carousel" 
+          #slickModal="slick-carousel" 
+          [config]="slideConfig">
+          <div ngxSlickItem *ngFor="let p of products" class="slide textAlign">
+          <img :src="{{p.productImageUrl}}" :alt="{{p.productImageAltText}}" class="w-100">
+          <h4 class="head"> {{ p.name }} </h4>
+          <p class="stock mt-2"> <span>Stock</span> {{ p.itemPositionOneBased }} </p>
+          <p class="currency"> <span>EUR</span> {{ p.price.formattedValue }} </p>
+          <a class="btn btn-primary" :href="{{p.url}}">Buy Now</a>
+      </div>
+      </ngx-slick-carousel>
+      </div>
+  
+  
